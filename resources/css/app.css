@@ -3,4 +3,12 @@
 
 @tailwind base;
 @tailwind components;
+
+/* ADD HERE 👇👇👇 */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @tailwind utilities;

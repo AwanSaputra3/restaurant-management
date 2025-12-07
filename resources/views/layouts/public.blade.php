@@ -1,47 +1,39 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name') }}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roemah Kuliner</title>
     @vite(['resources/css/app.css', 'resources/css/style.css', 'resources/js/app.js'])
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body class="antialiased">
-    <nav class="navbar">
-        <div class="container navbar-inner">
-            <div class="brand">
-                <a href="/" class="brand-pill">
-                    <img src="{{ asset('images/logo.svg') }}" alt="Restaurant Lezat" class="logo">
-                    <span class="brand-text name-hide-mobile">Restaurant Lezat</span>
-                </a>
-            </div>
-            <div class="nav-links">
-                <a href="{{ route('landing.restaurants') }}">Restaurants</a>
-                <a href="{{ route('landing.restaurants') }}#menus">Menus</a>
 
-                @auth
-                    <a href="{{ route('dashboard') }}">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
-                    @if(Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
+<body id="top" class="antialiased flex flex-col min-h-screen">
+
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/" class="brand-pill flex items-center gap-2">
+                <img src="{{ asset('images/logo.png') }}" class="logo w-8 h-8">
+                <span class="brand-text">Roemah Kuliner</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/menus">Order</a>
             </div>
         </div>
     </nav>
 
-    <main class="site-main">
-        @yield('content')
+<main class="flex-grow flex justify-center py-24">
+        <div class="max-w-4xl w-full text-center">
+            @yield('content')
+        </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p style="text-align:center;">&copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.</p>
+
+    <footer class="bg-gray-900 text-white py-12 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">&copy; {{ date('Y') }} Restoran Lezat. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>

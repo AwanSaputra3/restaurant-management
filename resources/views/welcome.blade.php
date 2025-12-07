@@ -25,7 +25,7 @@
                 <span class="brand-text">Roemah Kuliner</span>
             </a>
             <div class="nav-links">
-                <a href="/">Home</a>
+                <a href="#top">Home</a>
                 <a href="#menus">Order</a>
             </div>
         </div>
